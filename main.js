@@ -1,11 +1,19 @@
-$("i.fas").click( /* seleziono l'icona dell'hamburger e le dico di attivarsi al click*/
-  function() {
-  $(".hamburger-menu").fadeIn(); /* esegui il comando apri il menu con effetto opacità per gradi*/ OPPURE
-  // $("hamburger-menu").addClass("fadeIn");
-} )
+// manipolazione del DOM con jquery per esercizio hamburger menu
 
-$("i.fas.fa-times").click( /* quando il menu è aperto e lo voglio chiudere seleziono l'icona X di chiusura*/
-  function() {
-  $(".hamburger-menu").fadeOut(); /* e assegno l'istruzione di chiusura del menu con 'effetto opposto all'apertura OPPURE*/
-  // $("hamburger-menu").removeClass("fadeIn");
-} )
+// creazione variabile di stato su bottone apertura (icona con 3 stanghette) che appare quando si attiva la mediaquery (sotto il 1000px di view)
+var menuHamburger = $('.hamburger-menu');
+var bottone = $('#bottone');
+// creazione variabili di stato su bottone chiusura (icona della x) che appare quando hai cliccato sul menu e vuoi chiuderlo
+var bottoneChiudi = $('#bottonechiudi');
+
+bottone.on({
+  click:function(){
+    menuHamburger.show();
+  }
+});
+
+bottoneChiudi.on({
+  click:function(){
+    menuHamburger.hide();
+  }
+});
